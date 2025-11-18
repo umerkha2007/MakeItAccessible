@@ -120,48 +120,9 @@ class VisualEnhancements {
    * Toggle reading mode
    */
   toggleReadingMode(enabled) {
-    if (enabled) {
-      this.addStyles(`
-        html.makeitaccessible-reading-mode * {
-          font-family: 'Georgia', 'Times New Roman', serif !important;
-          line-height: 1.8 !important;
-          letter-spacing: 0.03em !important;
-        }
-        
-        html.makeitaccessible-reading-mode body {
-          max-width: 800px !important;
-          margin: 0 auto !important;
-          padding: 40px 20px !important;
-          background: #f5f5f5 !important;
-        }
-        
-        html.makeitaccessible-reading-mode h1,
-        html.makeitaccessible-reading-mode h2,
-        html.makeitaccessible-reading-mode h3,
-        html.makeitaccessible-reading-mode h4,
-        html.makeitaccessible-reading-mode h5,
-        html.makeitaccessible-reading-mode h6 {
-          margin-top: 1.5em !important;
-          margin-bottom: 0.5em !important;
-        }
-        
-        html.makeitaccessible-reading-mode p {
-          margin-bottom: 1.2em !important;
-        }
-        
-        html.makeitaccessible-reading-mode aside,
-        html.makeitaccessible-reading-mode nav,
-        html.makeitaccessible-reading-mode .sidebar,
-        html.makeitaccessible-reading-mode .ad,
-        html.makeitaccessible-reading-mode [class*="ad-"],
-        html.makeitaccessible-reading-mode [id*="ad-"] {
-          display: none !important;
-        }
-      `);
-      
-      document.documentElement.classList.add('makeitaccessible-reading-mode');
-    } else {
-      document.documentElement.classList.remove('makeitaccessible-reading-mode');
+    // Use the reader view module for distraction-free reading
+    if (window.readerView) {
+      window.readerView.toggle(enabled);
     }
   }
 

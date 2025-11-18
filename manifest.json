@@ -7,7 +7,8 @@
     "activeTab",
     "storage",
     "tts",
-    "contextMenus"
+    "contextMenus",
+    "scripting"
   ],
   "host_permissions": [
     "<all_urls>"
@@ -15,17 +16,17 @@
   "action": {
     "default_popup": "popup/popup.html",
     "default_icon": {
-      "16": "assets/icons/icon16.svg",
-      "32": "assets/icons/icon32.svg",
-      "48": "assets/icons/icon48.svg",
-      "128": "assets/icons/icon128.svg"
+      "16": "assets/icons/logo 16 x 16.png",
+      "32": "assets/icons/logo 32 x 32.png",
+      "48": "assets/icons/logo 48 x 48.png",
+      "128": "assets/icons/logo 128 x 128.png"
     }
   },
   "icons": {
-    "16": "assets/icons/icon16.svg",
-    "32": "assets/icons/icon32.svg",
-    "48": "assets/icons/icon48.svg",
-    "128": "assets/icons/icon128.svg"
+    "16": "assets/icons/logo 16 x 16.png",
+    "32": "assets/icons/logo 32 x 32.png",
+    "48": "assets/icons/logo 48 x 48.png",
+    "128": "assets/icons/logo 128 x 128.png"
   },
   "background": {
     "service_worker": "background/background.js"
@@ -36,7 +37,8 @@
       "js": [
         "content/accessibility.js",
         "content/visual-enhancements.js",
-        "content/audio-features.js"
+        "content/audio-features.js",
+        "content/reader-view.js"
       ],
       "css": ["content/styles.css"],
       "run_at": "document_end"

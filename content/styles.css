@@ -2,7 +2,8 @@
 
 /* Ensure our styles don't conflict with page styles */
 #makeitaccessible-reading-guide,
-#makeitaccessible-tts-button {
+#makeitaccessible-tts-button,
+#makeitaccessible-reader-overlay {
   all: initial;
   font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
@@ -34,3 +35,247 @@ html.makeitaccessible-enhanced *:focus {
   white-space: nowrap;
   border-width: 0;
 }
+
+/* Reader View Overlay */
+.makeitaccessible-reader-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: white !important;
+  z-index: 2147483647 !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  animation: fadeIn 0.3s ease-in !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Reader View Content Container */
+.makeitaccessible-reader-content {
+  max-width: 750px !important;
+  margin: 0 auto !important;
+  padding: 60px 40px 80px !important;
+  font-family: 'Georgia', 'Times New Roman', serif !important;
+  font-size: 18px !important;
+  line-height: 1.8 !important;
+  letter-spacing: 0.01em !important;
+  display: block !important;
+}
+
+/* Typography in Reader View */
+.makeitaccessible-reader-content h1,
+.makeitaccessible-reader-content h2,
+.makeitaccessible-reader-content h3,
+.makeitaccessible-reader-content h4,
+.makeitaccessible-reader-content h5,
+.makeitaccessible-reader-content h6 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important;
+  font-weight: 700 !important;
+  margin-top: 1.8em !important;
+  margin-bottom: 0.6em !important;
+  line-height: 1.3 !important;
+  letter-spacing: -0.02em !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative !important;
+  z-index: 1 !important;
+  max-height: none !important;
+  clip: auto !important;
+  height: auto !important;
+  width: auto !important;
+}
+
+.makeitaccessible-reader-content h1 {
+  font-size: 2.2em !important;
+  margin-top: 0 !important;
+  padding-bottom: 0.3em !important;
+}
+
+.makeitaccessible-reader-content h2 {
+  font-size: 1.8em !important;
+}
+
+.makeitaccessible-reader-content h3 {
+  font-size: 1.5em !important;
+}
+
+.makeitaccessible-reader-content h4 {
+  font-size: 1.25em !important;
+}
+
+.makeitaccessible-reader-content p {
+  margin-bottom: 1.4em !important;
+  text-align: justify !important;
+  hyphens: auto !important;
+  word-wrap: break-word !important;
+}
+
+.makeitaccessible-reader-content a {
+  text-decoration: underline !important;
+}
+
+.makeitaccessible-reader-content img {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  margin: 2em auto !important;
+  border-radius: 4px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.makeitaccessible-reader-content blockquote {
+  margin: 1.5em 0 !important;
+  padding: 1em 1.5em !important;
+  border-left: 4px solid #ccc !important;
+  font-style: italic !important;
+}
+
+.makeitaccessible-reader-content ul,
+.makeitaccessible-reader-content ol {
+  margin: 1em 0 !important;
+  padding-left: 2em !important;
+}
+
+.makeitaccessible-reader-content li {
+  margin-bottom: 0.5em !important;
+}
+
+.makeitaccessible-reader-content code {
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace !important;
+  padding: 0.2em 0.4em !important;
+  border-radius: 3px !important;
+  font-size: 0.9em !important;
+  border: 1px solid #ddd !important;
+}
+
+.makeitaccessible-reader-content pre {
+  padding: 1.5em !important;
+  border-radius: 6px !important;
+  overflow-x: auto !important;
+  margin: 1.5em 0 !important;
+  border: 1px solid #ddd !important;
+}
+
+.makeitaccessible-reader-content pre code {
+  border: none !important;
+  padding: 0 !important;
+}
+
+/* Reader View Close Button */
+.makeitaccessible-reader-close {
+  position: fixed !important;
+  top: 20px !important;
+  right: 20px !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  background: white !important;
+  border: 2px solid #ccc !important;
+  font-size: 24px !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+  transition: all 0.2s ease !important;
+  z-index: 2147483648 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-family: Arial, sans-serif !important;
+}
+
+.makeitaccessible-reader-close:hover {
+  border-color: #999 !important;
+  transform: scale(1.05) !important;
+}
+
+.makeitaccessible-reader-close:focus {
+  outline: 3px solid #6200ee !important;
+  outline-offset: 2px !important;
+}
+
+.makeitaccessible-reader-close:active {
+  transform: scale(0.95) !important;
+}
+
+/* Hide elements in reader view */
+.makeitaccessible-reader-content nav,
+.makeitaccessible-reader-content aside,
+.makeitaccessible-reader-content footer,
+.makeitaccessible-reader-content [class*="ad"]:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6),
+.makeitaccessible-reader-content [id*="ad"]:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6),
+.makeitaccessible-reader-content [class*="banner"]:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6),
+.makeitaccessible-reader-content [class*="social"],
+.makeitaccessible-reader-content [class*="share"],
+.makeitaccessible-reader-content [class*="comment"],
+.makeitaccessible-reader-content [class*="related"],
+.makeitaccessible-reader-content iframe[src*="ad"],
+.makeitaccessible-reader-content iframe[src*="banner"] {
+  display: none !important;
+}
+
+/* Ensure headings and their containers are always visible */
+.makeitaccessible-reader-content h1,
+.makeitaccessible-reader-content h2,
+.makeitaccessible-reader-content h3,
+.makeitaccessible-reader-content h4,
+.makeitaccessible-reader-content h5,
+.makeitaccessible-reader-content h6,
+.makeitaccessible-reader-content [data-component*="headline"],
+.makeitaccessible-reader-content header:has(> h1),
+.makeitaccessible-reader-content header:has(> h2),
+.makeitaccessible-reader-content header:has(> h3),
+.makeitaccessible-reader-content header:has(> h4),
+.makeitaccessible-reader-content header:has(> h5),
+.makeitaccessible-reader-content header:has(> h6),
+.makeitaccessible-reader-content div:has(> h1),
+.makeitaccessible-reader-content div:has(> h2) {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+/* Responsive design for reader view */
+@media (max-width: 768px) {
+  .makeitaccessible-reader-content {
+    padding: 40px 20px 60px !important;
+    font-size: 16px !important;
+  }
+  
+  .makeitaccessible-reader-content h1 {
+    font-size: 1.8em !important;
+  }
+  
+  .makeitaccessible-reader-content h2 {
+    font-size: 1.5em !important;
+  }
+  
+  .makeitaccessible-reader-close {
+    top: 10px !important;
+    right: 10px !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
+
+
+

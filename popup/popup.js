@@ -116,14 +116,31 @@ async function sendToContentScript(action, data = {}) {
   try {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
     
-    if (tab?.id) {
-      await chrome.tabs.sendMessage(tab.id, {
-        action,
-        data: { ...data, state }
-      });
+    if (!tab?.id) {
+      return;
     }
+    
+    // Check if the tab URL is accessible
+    const url = tab.url || '';
+    const isRestrictedPage = url.startsWith('chrome://') || 
+                            url.startsWith('chrome-extension://') || 
+                            url.startsWith('edge://') ||
+                            url.startsWith('about:') ||
+                            url === '';
+    
+    if (isRestrictedPage) {
+      console.log('Cannot modify restricted pages');
+      return;
+    }
+    
+    // Send message to content script
+    await chrome.tabs.sendMessage(tab.id, {
+      action,
+      data: { ...data, state }
+    });
   } catch (error) {
-    console.error('Error sending message to content script:', error);
+    // Content script might not be ready yet on newly loaded pages
+    console.log('Content script not ready:', error.message);
   }
 }
 
