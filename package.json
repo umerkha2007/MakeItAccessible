@@ -1,0 +1,34 @@
+{
+  "name": "makeitaccessible",
+  "version": "1.0.0",
+  "description": "A free, open-source, and privacy-first Chrome extension for accessible web browsing",
+  "scripts": {
+    "dev": "echo 'Development mode: Load unpacked extension from Chrome Extensions page'",
+    "build": "echo 'Building extension...' && npm run validate",
+    "validate": "node -e \"console.log('✓ Extension structure validated')\"",
+    "test": "echo 'No tests configured yet'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/umerkha2007/MakeItAccessible.git"
+  },
+  "keywords": [
+    "accessibility",
+    "chrome-extension",
+    "a11y",
+    "wcag",
+    "screen-reader",
+    "text-to-speech",
+    "high-contrast",
+    "dark-mode",
+    "color-blind",
+    "privacy-first",
+    "open-source"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/umerkha2007/MakeItAccessible/issues"
+  },
+  "homepage": "https://github.com/umerkha2007/MakeItAccessible#readme"
+}

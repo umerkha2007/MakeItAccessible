@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MakeItAccessible - Settings</title>
+  <link rel="stylesheet" href="options.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <span class="material-icons header-icon">accessibility_new</span>
+        <div>
+          <h1 class="title">MakeItAccessible</h1>
+          <p class="subtitle">Settings & Preferences</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Welcome Section -->
+      <section class="card welcome-card">
+        <span class="material-icons card-icon">waving_hand</span>
+        <h2 class="card-title">Welcome to MakeItAccessible!</h2>
+        <p class="card-description">
+          Configure your accessibility preferences below. All settings are saved automatically and applied in real-time.
+          Your data never leaves your device - everything is stored locally.
+        </p>
+      </section>
+
+      <!-- Visual Accessibility -->
+      <section class="card">
+        <div class="card-header">
+          <span class="material-icons card-icon">visibility</span>
+          <h2 class="card-title">Visual Accessibility</h2>
+        </div>
+        
+        <div class="setting-group">
+          <div class="setting-item">
+            <div class="setting-info">
+              <h3 class="setting-title">Font Size</h3>
+              <p class="setting-description">Adjust the default font size for better readability</p>
+            </div>
+            <div class="font-slider-container">
+              <input type="range" id="fontSize" class="slider" min="50" max="200" step="10" value="100">
+              <span class="slider-value" id="fontSizeDisplay">100%</span>
+            </div>
+          </div>
+
+          <div class="setting-item">
+            <div class="setting-info">
+              <h3 class="setting-title">High Contrast Mode</h3>
+              <p class="setting-description">Increase contrast for better visibility</p>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="highContrast">
+              <span class="slider-toggle"></span>
+            </label>
+          </div>
+
+          <div class="setting-item">
+            <div class="setting-info">
+              <h3 class="setting-title">Dark Mode</h3>
+              <p class="setting-description">Reduce eye strain with dark theme</p>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="darkMode">
+              <span class="slider-toggle"></span>
+            </label>
+          </div>
+
+          <div class="setting-item">
+            <div class="setting-info">
+              <h3 class="setting-title">Reading Guide</h3>
+              <p class="setting-description">Show a line guide that follows your cursor</p>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="readingGuide">
+              <span class="slider-toggle"></span>
+            </label>
+          </div>
+
+          <div class="setting-item">
+            <div class="setting-info">
+              <h3 class="setting-title">Color Blind Mode</h3>
+              <p class="setting-description">Adjust colors for color vision deficiency</p>
+            </div>
+            <select id="colorBlindMode" class="custom-select">
+              <option value="none">None</option>
+              <option value="protanopia">Protanopia (Red-blind)</option>
+              <option value="deuteranopia">Deuteranopia (Green-blind)</option>
+              <option value="tritanopia">Tritanopia (Blue-blind)</option>
+              <option value="achromatopsia">Achromatopsia (Total)</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- Reading Accessibility -->
+      <section class="card">
+        <div class="card-header">
+          <span class="material-icons card-icon">auto_stories</span>
+          <h2 class="card-title">Reading Accessibility</h2>
+        </div>
+        
+        <div class="setting-group">
+          <div class="setting-item">
+            <div class="setting-info">
+              <h3 class="setting-title">Reading Mode</h3>
+              <p class="setting-description">Simplified layout with improved typography</p>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="readingMode">
+              <span class="slider-toggle"></span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- Audio Accessibility -->
+      <section class="card">
+        <div class="card-header">
+          <span class="material-icons card-icon">record_voice_over</span>
+          <h2 class="card-title">Audio Accessibility</h2>
+        </div>
+        
+        <div class="setting-group">
+          <div class="setting-item">
+            <div class="setting-info">
+              <h3 class="setting-title">Text-to-Speech</h3>
+              <p class="setting-description">Enable voice reading for selected text</p>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="tts">
+              <span class="slider-toggle"></span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- Keyboard Shortcuts -->
+      <section class="card">
+        <div class="card-header">
+          <span class="material-icons card-icon">keyboard</span>
+          <h2 class="card-title">Keyboard Shortcuts</h2>
+        </div>
+        
+        <div class="shortcuts-list">
+          <div class="shortcut-item">
+            <span class="shortcut-name">Toggle High Contrast</span>
+            <kbd class="shortcut-key">Ctrl + Shift + H</kbd>
+          </div>
+          <div class="shortcut-item">
+            <span class="shortcut-name">Toggle Dark Mode</span>
+            <kbd class="shortcut-key">Ctrl + Shift + D</kbd>
+          </div>
+          <div class="shortcut-item">
+            <span class="shortcut-name">Increase Font Size</span>
+            <kbd class="shortcut-key">Ctrl + Shift + +</kbd>
+          </div>
+        </div>
+      </section>
+
+      <!-- Privacy & Data -->
+      <section class="card">
+        <div class="card-header">
+          <span class="material-icons card-icon">lock</span>
+          <h2 class="card-title">Privacy & Data</h2>
+        </div>
+        
+        <div class="info-box">
+          <span class="material-icons info-icon">info</span>
+          <div class="info-content">
+            <h3 class="info-title">Your Privacy Matters</h3>
+            <p class="info-text">
+              All settings and data are stored locally on your device. We don't collect, transmit, 
+              or share any information. Your accessibility preferences stay completely private.
+            </p>
+          </div>
+        </div>
+
+        <div class="button-group">
+          <button class="btn btn-secondary" id="exportSettings">
+            <span class="material-icons">file_download</span>
+            Export Settings
+          </button>
+          <button class="btn btn-secondary" id="importSettings">
+            <span class="material-icons">file_upload</span>
+            Import Settings
+          </button>
+          <button class="btn btn-danger" id="resetSettings">
+            <span class="material-icons">restart_alt</span>
+            Reset All Settings
+          </button>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section class="card">
+        <div class="card-header">
+          <span class="material-icons card-icon">info</span>
+          <h2 class="card-title">About</h2>
+        </div>
+        
+        <div class="about-content">
+          <p class="about-text">
+            <strong>MakeItAccessible v1.0.0</strong><br>
+            A free, open-source, and privacy-first Chrome extension for accessible web browsing.
+          </p>
+          <p class="about-text">
+            Built with ❤️ for accessibility and privacy.
+          </p>
+          <div class="about-links">
+            <a href="https://github.com/yourusername/MakeItAccessible" class="link" target="_blank">
+              <span class="material-icons">code</span>
+              View on GitHub
+            </a>
+            <a href="https://github.com/yourusername/MakeItAccessible/issues" class="link" target="_blank">
+              <span class="material-icons">bug_report</span>
+              Report Issues
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Save Status Toast -->
+    <div id="saveToast" class="toast" role="alert" aria-live="polite">
+      <span class="material-icons toast-icon">check_circle</span>
+      <span class="toast-message">Settings saved!</span>
+    </div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

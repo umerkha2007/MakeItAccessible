@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MakeItAccessible</title>
+  <link rel="stylesheet" href="popup.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <span class="material-icons header-icon">accessibility_new</span>
+        <h1 class="title">MakeItAccessible</h1>
+      </div>
+      <button class="icon-btn settings-btn" id="openSettings" aria-label="Open settings">
+        <span class="material-icons">settings</span>
+      </button>
+    </header>
+
+    <!-- Quick Actions -->
+    <section class="section">
+      <h2 class="section-title">Quick Actions</h2>
+      <div class="quick-actions">
+        <button class="action-card" id="toggleHighContrast" aria-pressed="false">
+          <span class="material-icons action-icon">contrast</span>
+          <span class="action-label">High Contrast</span>
+          <div class="action-status" id="contrastStatus">Off</div>
+        </button>
+        
+        <button class="action-card" id="toggleDarkMode" aria-pressed="false">
+          <span class="material-icons action-icon">dark_mode</span>
+          <span class="action-label">Dark Mode</span>
+          <div class="action-status" id="darkModeStatus">Off</div>
+        </button>
+        
+        <button class="action-card" id="toggleReadingMode" aria-pressed="false">
+          <span class="material-icons action-icon">auto_stories</span>
+          <span class="action-label">Reading Mode</span>
+          <div class="action-status" id="readingModeStatus">Off</div>
+        </button>
+        
+        <button class="action-card" id="toggleTTS" aria-pressed="false">
+          <span class="material-icons action-icon">record_voice_over</span>
+          <span class="action-label">Text-to-Speech</span>
+          <div class="action-status" id="ttsStatus">Off</div>
+        </button>
+      </div>
+    </section>
+
+    <!-- Font Size Control -->
+    <section class="section">
+      <h2 class="section-title">Font Size</h2>
+      <div class="font-control">
+        <button class="control-btn" id="decreaseFont" aria-label="Decrease font size">
+          <span class="material-icons">remove</span>
+        </button>
+        <div class="font-display">
+          <span id="fontSizeValue">100</span>%
+        </div>
+        <button class="control-btn" id="increaseFont" aria-label="Increase font size">
+          <span class="material-icons">add</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Color Blind Support -->
+    <section class="section">
+      <h2 class="section-title">Color Blind Mode</h2>
+      <div class="select-wrapper">
+        <select id="colorBlindMode" class="custom-select" aria-label="Select color blind mode">
+          <option value="none">None</option>
+          <option value="protanopia">Protanopia (Red-blind)</option>
+          <option value="deuteranopia">Deuteranopia (Green-blind)</option>
+          <option value="tritanopia">Tritanopia (Blue-blind)</option>
+          <option value="achromatopsia">Achromatopsia (Total)</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Reading Guide -->
+    <section class="section">
+      <div class="toggle-row">
+        <div class="toggle-label">
+          <span class="material-icons toggle-icon">format_line_spacing</span>
+          <span>Reading Guide</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="toggleReadingGuide" aria-label="Toggle reading guide">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p class="footer-text">
+        <span class="material-icons footer-icon">lock</span>
+        Privacy-first • All data stays local
+      </p>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
